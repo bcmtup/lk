@@ -141,7 +141,7 @@ const us = account['address'];
 const refLink = $("#input-ref");
 const refLinks = $("#refLink");
 
-const link = "https://neopoly.site/?ref=" + us;
+const link = "https://lk.polsage.io/reg/stake/?ref=" + us;
 
 
 function formatCurrency(number, decimalPlaces = 8) {
@@ -189,13 +189,13 @@ $("#getUserTotalWithdrawn").html(formatCurrency(data_user[2]['result']) + "<span
 
 if(getUserTotalDeposits < 30)
 {
-	procuser = 2.0;
-} else if(getUserTotalDeposits >= 301 && getUserTotalDeposits <3000)
+	procuser = 0.20;
+} else if(getUserTotalDeposits >= 5001 && getUserTotalDeposits <50000)
 {
-	procuser = 2.5;
-} else if(getUserTotalDeposits >= 3000 && getUserTotalDeposits <5000)
+	procuser = 0.25;
+} else if(getUserTotalDeposits >= 50000 && getUserTotalDeposits <100000)
 {
-	procuser = 3.0;
+	procuser = 0.30;
 }
 
 
@@ -471,7 +471,7 @@ function Allert_Green(_text) {
     Toastify({
         text: _text,
         style: {
-            background: "#87CEEB",
+            background: "#87c000",
             color: "white",
             fontSize: "14px",
             fontWeight: "600",
