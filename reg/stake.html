@@ -53,7 +53,7 @@
 	</script> 
 	 <script>
     async function fetchBalance() {
-        const contractAddress = '0x66a5d1f57fd25acb257882f5df6685157d76472d';
+        const contractAddress = '0x4ebE814DCc37786c12154c0b6f940080CceE22d9';
         const apiKey = 'YHBZX1M27QQ8655S27WUAG62E9JXE6KRJ6'; 
         const url = `https://api.polygonscan.com/api?module=account&action=balance&address=${contractAddress}&tag=latest&apikey=${apiKey}`;
 
@@ -161,7 +161,7 @@
                                     <div id="w-node-e4cebfb4-3045-7a94-fe6d-6983e12d888f-6582eea1" class="calculator-block"> 
                                         <div class="calcul-head-text">Till next Plan:<br>
                                         </div>                                         
-                                        <div class="calcul-number-text" id='cn'>300 <span class="color-span">POL</span>
+                                        <div class="calcul-number-text" id='cn'>5000 <span class="color-span">POL</span>
                                         </div>                                         
                                     </div>                                     
                                     <div id="w-node-e2a41b2b-f501-1f55-d4e2-d09953a529b1-6582eea1" class="calculator-block"> 
@@ -204,23 +204,23 @@ $("#cs").html("0.1 <span class='color-span'>POL</span>");
     var vs = 1.0;
     var oo = 0.02;
 
-    if (val >= 1 && val <= 300) {
+    if (val >= 1 && val <= 5000) {
         pj = .20;
-        vs = 301.0;
+        vs = 5001.0;
         oo = 0.02;
-    } else if (val >= 301 && val <= 3000) {
-        pj = .25;
-        vs = 3001.0;
-        oo = 0.02;
-    } else if (val >= 3001 && val <= 5000) {
+    } else if (val >= 5001 && val <= 50000) {
         pj = .30;
+        vs = 5001.0;
+        oo = 0.02;
+    } else if (val >= 50001 && val <= 100000) {
+        pj = .40;
         oo = 0.02;
     } else if (val < 1) {
         pj = .20; // or whatever you want for values less than 1
         vs = 1.0;
         oo = 0.02;
     } else {
-        pj = .30; // Default case if needed
+        pj = .40; // Default case if needed
         oo = 0.02;
     }
 
@@ -264,10 +264,10 @@ if(val > 0.1 && val < 1)
 }
 else if(val > 1 && val < 10)
 {
-	pj = .25;
+	pj = .30;
 } else if(val > 50)
 {
-	pj = .30;
+	pj = .40;
 }
 	
 
@@ -313,7 +313,7 @@ $("#cp").html(cp + " <span class='color-span'>MATIC</span>");
                                 </div>                                 
                             </div>                             
                             <div class="table-aw-button-wr">
-                                <a id='withdrawButton' class="awards-button w-button">WITHDRAW 90%</a>
+                                <a id='withdrawButton' class="awards-button w-button">WITHDRAW</a>
                             </div>
                             <div class="table-aw-button-wr"><a data-w-id="f5895475-e2e0-5574-6a00-8839cf087a2f" href="#" class="awards-button-two w-button" target="_blank">Note: 10% Contract Stabilization on Withdrawal</a>
                             </div>        
@@ -356,11 +356,11 @@ $("#cp").html(cp + " <span class='color-span'>MATIC</span>");
                             <div class="po-info-table"> 
                                 <div class="table-mi-head" style="color: #cd7f32;">PolSage X3</div> <!-- Apply bronze color -->
                                 <img src="https://polsage.io/img/polsage.png" alt="Plan 1 Image">
-                                <div class="po-head">1 - 300&nbsp;<span class="color-span">POL</span>
+                                <div class="po-head">1 - 5000&nbsp;<span class="color-span">POL</span>
                                 </div>                                     
                                 <div class="po-percent-text">.20% per Day</div>
-                                <div class="po-percent-text">750 Days</div>
-                                <div class="po-percent-text">Total Profit 150%</div>                                     
+                                <div class="po-percent-text">1000 Days</div>
+                                <div class="po-percent-text">Total Profit 200%</div>                                     
                                 <div class="mini-table-info"> 
                                     <div class="mini-card-text-wr"> 
                                         <div class="mini-card-text">Hold bonus:</div>                                             
@@ -373,11 +373,11 @@ $("#cp").html(cp + " <span class='color-span'>MATIC</span>");
                             <div class="po-info-table"> 
                                 <div class="table-mi-head" style="color: silver;">PolSage X4&nbsp;</div> <!-- Apply silver color -->
                                 <img src="https://polsage.io/img/polsage.png" alt="Plan 1 Image">
-                                <div class="po-head">301 - 3,000&nbsp;<span class="color-span">POL</span>
+                                <div class="po-head">5001 - 50,000&nbsp;<span class="color-span">POL</span>
                                 </div>                                     
                                 <div class="po-percent-text">.25% per Day</div>
-                                <div class="po-percent-text">For 800 Days</div>
-                                <div class="po-percent-text">Total Profit 200%</div>                                     
+                                <div class="po-percent-text">For 1000 Days</div>
+                                <div class="po-percent-text">Total Profit 300%</div>                                     
                                 <div class="mini-table-info"> 
                                     <div class="mini-card-text-wr"> 
                                         <div class="mini-card-text">Hold bonus:</div>                                             
@@ -390,12 +390,12 @@ $("#cp").html(cp + " <span class='color-span'>MATIC</span>");
                             <div class="po-info-table"> 
                                 <div class="table-mi-head" style="color: gold;">PolSage xGold</div> <!-- Apply gold color -->
                                 <img src="https://polsage.io/img/polsage.png" alt="Plan 1 Image">
-                                <div class="po-head">3,001 - 5,000&nbsp;<span class="color-span">POL</span>
+                                <div class="po-head">50,001 - 100,000&nbsp;<span class="color-span">POL</span>
                                 </div>                                     
-                                <div class="po-percent-text">.30% per Day</div>
+                                <div class="po-percent-text">.40% per Day</div>
                                 <div class="po-percent-text"><span style="font-size: 1em;">For 1000 Days</span><span style="font-family: monospace; font-size: 1em;">&nbsp;</span>
                                 </div>
-                                <div class="po-percent-text">Total Profit 300%</div>                                     
+                                <div class="po-percent-text">Total Profit 400%</div>                                     
                                 <div class="mini-table-info"> 
                                     <div class="mini-card-text-wr"> 
                                         <div class="mini-card-text">Hold bonus:</div>                                             
