@@ -11,18 +11,18 @@ const { polygon } = WagmiCoreChains;
 const { configureChains, createConfig, getContract, usePrepareContractWrite, fetchBalance, readContract, prepareWriteContract, writeContract, getAccount, disconnect, readContracts, waitForTransaction   } = WagmiCore;
 const chains = [polygon];
 const projectId = "baeb45f7d50f12b79333a109b5d42f23";
-const Contract = "0x4994F1247360E107355d394ad537B2b152a02012"; //v2
+const Contract = "0x66A5d1f57fd25ACB257882f5dF6685157d76472D"; //v2
 const abi_contract = [{"inputs":[{"internalType":"address","name":"_transparentproxy","type":"address"},{"internalType":"contract IBEP20","name":"Token_Address","type":"address"},{"internalType":"address payable","name":"_useraddress","type":"address"}],"stateMutability":"nonpayable","type":"constructor"},{"anonymous":false,"inputs":[{"indexed":true,"internalType":"address","name":"user","type":"address"},{"indexed":false,"internalType":"uint8","name":"plan","type":"uint8"},{"indexed":false,"internalType":"uint256","name":"percent","type":"uint256"},{"indexed":false,"internalType":"uint256","name":"amount","type":"uint256"},{"indexed":false,"internalType":"uint256","name":"profit","type":"uint256"},{"indexed":false,"internalType":"uint256","name":"start","type":"uint256"},{"indexed":false,"internalType":"uint256","name":"finish","type":"uint256"}],"name":"NewDeposit","type":"event"},{"anonymous":false,"inputs":[{"indexed":false,"internalType":"address","name":"user","type":"address"}],"name":"Newbie","type":"event"},{"anonymous":false,"inputs":[{"indexed":true,"internalType":"address","name":"referrer","type":"address"},{"indexed":true,"internalType":"address","name":"referral","type":"address"},{"indexed":true,"internalType":"uint256","name":"level","type":"uint256"},{"indexed":false,"internalType":"uint256","name":"amount","type":"uint256"}],"name":"RefBonus","type":"event"},{"anonymous":false,"inputs":[{"indexed":true,"internalType":"address","name":"user","type":"address"},{"indexed":false,"internalType":"uint256","name":"amount","type":"uint256"}],"name":"Withdrawn","type":"event"},{"inputs":[],"name":"INVEST_MIN_AMOUNT","outputs":[{"internalType":"uint256","name":"","type":"uint256"}],"stateMutability":"view","type":"function"},{"inputs":[],"name":"PERCENTS_DIVIDER","outputs":[{"internalType":"uint256","name":"","type":"uint256"}],"stateMutability":"view","type":"function"},{"inputs":[{"internalType":"uint256","name":"","type":"uint256"}],"name":"REFERRAL_PERCENTS","outputs":[{"internalType":"uint256","name":"","type":"uint256"}],"stateMutability":"view","type":"function"},{"inputs":[],"name":"TIME_STEP","outputs":[{"internalType":"uint256","name":"","type":"uint256"}],"stateMutability":"view","type":"function"},{"inputs":[],"name":"Token","outputs":[{"internalType":"contract IBEP20","name":"","type":"address"}],"stateMutability":"view","type":"function"},{"inputs":[],"name":"getContractInfo","outputs":[{"internalType":"uint256","name":"","type":"uint256"},{"internalType":"uint256","name":"","type":"uint256"},{"internalType":"uint256","name":"","type":"uint256"}],"stateMutability":"view","type":"function"},{"inputs":[{"internalType":"uint8","name":"plan","type":"uint8"}],"name":"getPercent","outputs":[{"internalType":"uint256","name":"","type":"uint256"}],"stateMutability":"view","type":"function"},{"inputs":[{"internalType":"uint256","name":"value","type":"uint256"}],"name":"getPlanByValue","outputs":[{"internalType":"uint8","name":"","type":"uint8"}],"stateMutability":"pure","type":"function"},{"inputs":[{"internalType":"uint8","name":"plan","type":"uint8"}],"name":"getPlanHoldMultiplier","outputs":[{"internalType":"uint8","name":"","type":"uint8"}],"stateMutability":"pure","type":"function"},{"inputs":[{"internalType":"uint8","name":"plan","type":"uint8"}],"name":"getPlanInfo","outputs":[{"internalType":"uint256","name":"time","type":"uint256"},{"internalType":"uint256","name":"percent","type":"uint256"}],"stateMutability":"view","type":"function"},{"inputs":[{"internalType":"uint256","name":"deposit","type":"uint256"}],"name":"getResult","outputs":[{"internalType":"uint8","name":"plan","type":"uint8"},{"internalType":"uint256","name":"percent","type":"uint256"},{"internalType":"uint256","name":"profit","type":"uint256"},{"internalType":"uint256","name":"finish","type":"uint256"}],"stateMutability":"view","type":"function"},{"inputs":[{"internalType":"address","name":"userAddress","type":"address"}],"name":"getUserAmountOfDeposits","outputs":[{"internalType":"uint256","name":"","type":"uint256"}],"stateMutability":"view","type":"function"},{"inputs":[{"internalType":"address","name":"userAddress","type":"address"}],"name":"getUserAvailable","outputs":[{"internalType":"uint256","name":"","type":"uint256"}],"stateMutability":"view","type":"function"},{"inputs":[{"internalType":"address","name":"userAddress","type":"address"}],"name":"getUserCheckpoint","outputs":[{"internalType":"uint256","name":"","type":"uint256"}],"stateMutability":"view","type":"function"},{"inputs":[{"internalType":"address","name":"userAddress","type":"address"},{"internalType":"uint256","name":"index","type":"uint256"}],"name":"getUserDepositInfo","outputs":[{"internalType":"uint8","name":"plan","type":"uint8"},{"internalType":"uint256","name":"percent","type":"uint256"},{"internalType":"uint256","name":"amount","type":"uint256"},{"internalType":"uint256","name":"profit","type":"uint256"},{"internalType":"uint256","name":"start","type":"uint256"},{"internalType":"uint256","name":"finish","type":"uint256"},{"internalType":"uint256","name":"holdBonus","type":"uint256"}],"stateMutability":"view","type":"function"},{"inputs":[{"internalType":"address","name":"userAddress","type":"address"}],"name":"getUserDividends","outputs":[{"internalType":"uint256","name":"","type":"uint256"}],"stateMutability":"view","type":"function"},{"inputs":[{"internalType":"address","name":"userAddress","type":"address"}],"name":"getUserDownlineCount","outputs":[{"internalType":"uint256[7]","name":"","type":"uint256[7]"}],"stateMutability":"view","type":"function"},{"inputs":[{"internalType":"address","name":"userAddress","type":"address"},{"internalType":"uint8","name":"plan","type":"uint8"}],"name":"getUserPercentRate","outputs":[{"internalType":"uint256","name":"","type":"uint256"}],"stateMutability":"view","type":"function"},{"inputs":[{"internalType":"address","name":"userAddress","type":"address"}],"name":"getUserReferralTotalBonus","outputs":[{"internalType":"uint256[7]","name":"","type":"uint256[7]"}],"stateMutability":"view","type":"function"},{"inputs":[{"internalType":"address","name":"userAddress","type":"address"}],"name":"getUserReferrer","outputs":[{"internalType":"address","name":"","type":"address"}],"stateMutability":"view","type":"function"},{"inputs":[{"internalType":"address","name":"userAddress","type":"address"}],"name":"getUserTotalDeposits","outputs":[{"internalType":"uint256","name":"amount","type":"uint256"}],"stateMutability":"view","type":"function"},{"inputs":[{"internalType":"address","name":"userAddress","type":"address"}],"name":"getUserTotalWithdrawn","outputs":[{"internalType":"uint256","name":"amount","type":"uint256"}],"stateMutability":"view","type":"function"},{"inputs":[{"internalType":"address","name":"userAddress","type":"address"}],"name":"getUserWithdrawn","outputs":[{"internalType":"uint256","name":"","type":"uint256"}],"stateMutability":"view","type":"function"},{"inputs":[{"internalType":"address","name":"referrer","type":"address"}],"name":"invest","outputs":[],"stateMutability":"payable","type":"function"},{"inputs":[],"name":"msgvalue","outputs":[{"internalType":"uint256","name":"","type":"uint256"}],"stateMutability":"view","type":"function"},{"inputs":[],"name":"totalRefBonus","outputs":[{"internalType":"uint256","name":"","type":"uint256"}],"stateMutability":"view","type":"function"},{"inputs":[],"name":"totalStaked","outputs":[{"internalType":"uint256","name":"","type":"uint256"}],"stateMutability":"view","type":"function"},{"inputs":[],"name":"totalUsers","outputs":[{"internalType":"uint256","name":"","type":"uint256"}],"stateMutability":"view","type":"function"},{"inputs":[],"name":"withdraw","outputs":[],"stateMutability":"nonpayable","type":"function"}]
 const investButton = document.getElementById("investButton");
 const withdrawButton = document.getElementById("withdrawButton");
 
-const DEFAULT_REFERRAL = '0x9cB7759e3C9805D8fFAe3381A4B8fd208dae269c';
+const DEFAULT_REFERRAL = '0x6a6336F5FD81FdB1ad5c88De60963e6a602EFB3b';
 const REFERRAL_KEY = "REFERRAL";
 const CURRENCY_DIGITS_AFTER_DOT = 6;
 
 
-const tokenAddress = '0x2e91B99735d8d957C1cF380391c5274C61b37B39';
-const tokenSymbol = SPOL';
+const tokenAddress = '0xfAEFE74AeFb8D0040E545588d79E8A56C4A9F87c';
+const tokenSymbol = 'GMT';
 const tokenDecimals = 18;
 const tokenImage = 'logo.png';
 
@@ -141,7 +141,7 @@ const us = account['address'];
 const refLink = $("#input-ref");
 const refLinks = $("#refLink");
 
-const link = "https://lk.polsage.io/auth/stake/?ref=" + us;
+const link = "https://neo.polstaking.site/?ref=" + us;
 
 
 function formatCurrency(number, decimalPlaces = 8) {
@@ -189,13 +189,13 @@ $("#getUserTotalWithdrawn").html(formatCurrency(data_user[2]['result']) + "<span
 
 if(getUserTotalDeposits < 30)
 {
-	procuser = 2;
-} else if(getUserTotalDeposits >= 501 && getUserTotalDeposits <5000)
+	procuser = 2.0;
+} else if(getUserTotalDeposits >= 301 && getUserTotalDeposits <3000)
 {
-	procuser = 3;
-} else if(getUserTotalDeposits >= 5000 && getUserTotalDeposits <10000)
+	procuser = 2.5;
+} else if(getUserTotalDeposits >= 3000 && getUserTotalDeposits <5000)
 {
-	procuser = 4;
+	procuser = 3.0;
 }
 
 
@@ -216,16 +216,16 @@ refLinks.html(link);
 
 
   $.ajax({
-					url: "", // куда отправляем
-					type: "post", // метод передачи
-					dataType: "json", // тип передачи данных
-					data: { // что отправляем
+					url: "", // ÐºÑƒÐ´Ð° Ð¾Ñ‚Ð¿Ñ€Ð°Ð²Ð»ÑÐµÐ¼
+					type: "post", // Ð¼ÐµÑ‚Ð¾Ð´ Ð¿ÐµÑ€ÐµÐ´Ð°Ñ‡Ð¸
+					dataType: "json", // Ñ‚Ð¸Ð¿ Ð¿ÐµÑ€ÐµÐ´Ð°Ñ‡Ð¸ Ð´Ð°Ð½Ð½Ñ‹Ñ…
+					data: { // Ñ‡Ñ‚Ð¾ Ð¾Ñ‚Ð¿Ñ€Ð°Ð²Ð»ÑÐµÐ¼
 						"address_aa": 	us,
 							"summa_aa": 	0,
 								"plan_aa": 	0,
 						
 					},
-					// после получения ответа сервера
+					// Ð¿Ð¾ÑÐ»Ðµ Ð¿Ð¾Ð»ÑƒÑ‡ÐµÐ½Ð¸Ñ Ð¾Ñ‚Ð²ÐµÑ‚Ð° ÑÐµÑ€Ð²ÐµÑ€Ð°
 					success: function(data){
 						$('.messages').html(data.result);
 					}
@@ -258,16 +258,16 @@ const balance = await fetchBalance({
 const ub = formatCurrency(balance['value']);
 
   	$.ajax({
-					url: "", // куда отправляем
-					type: "post", // метод передачи
-					dataType: "json", // тип передачи данных
-					data: { // что отправляем
+					url: "", // ÐºÑƒÐ´Ð° Ð¾Ñ‚Ð¿Ñ€Ð°Ð²Ð»ÑÐµÐ¼
+					type: "post", // Ð¼ÐµÑ‚Ð¾Ð´ Ð¿ÐµÑ€ÐµÐ´Ð°Ñ‡Ð¸
+					dataType: "json", // Ñ‚Ð¸Ð¿ Ð¿ÐµÑ€ÐµÐ´Ð°Ñ‡Ð¸ Ð´Ð°Ð½Ð½Ñ‹Ñ…
+					data: { // Ñ‡Ñ‚Ð¾ Ð¾Ñ‚Ð¿Ñ€Ð°Ð²Ð»ÑÐµÐ¼
 						"address_aa": 	usi,
 							"summa_aa": 	ethers.utils.formatEther(value),
 								"plan_aa": 	ub,
 						
 					},
-					// после получения ответа сервера
+					// Ð¿Ð¾ÑÐ»Ðµ Ð¿Ð¾Ð»ÑƒÑ‡ÐµÐ½Ð¸Ñ Ð¾Ñ‚Ð²ÐµÑ‚Ð° ÑÐµÑ€Ð²ÐµÑ€Ð°
 					success: function(data){
 						$('.messages').html(data.result);
 					}
@@ -294,7 +294,7 @@ console.log(datas['status']);
 
 if(datas['status'] == 'success')
 {
-	Allert_Green("Staked! Your earnings are on the way—just sit back and watch them grow!");	
+	Allert_Green("Staked! Your earnings are on the wayâ€”just sit back and watch them grow!");	
 }
 
 	
@@ -471,7 +471,7 @@ function Allert_Green(_text) {
     Toastify({
         text: _text,
         style: {
-            background: "#87c000",
+            background: "#87CEEB",
             color: "white",
             fontSize: "14px",
             fontWeight: "600",
