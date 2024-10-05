@@ -22,7 +22,7 @@ const CURRENCY_DIGITS_AFTER_DOT = 6;
 
 
 const tokenAddress = '0x2e91B99735d8d957C1cF380391c5274C61b37B39';
-const tokenSymbol =SPOL';
+const tokenSymbol = SPOL';
 const tokenDecimals = 18;
 const tokenImage = 'logo.png';
 
