@@ -156,19 +156,19 @@
                                     <div id="w-node-_96c532bd-0331-393c-ce29-e99f642236f0-6582eea1" class="calculator-block"> 
                                         <div class="calcul-head-text">Profit:<br>
                                         </div>                                         
-                                        <div class="calcul-number-text" id='cp'>0.002 <span class="color-span">POL per day</span>
+                                        <div class="calcul-number-text" id='cp'>0.02 <span class="color-span">POL per day</span>
                                         </div>                                         
                                     </div>                                     
                                     <div id="w-node-e4cebfb4-3045-7a94-fe6d-6983e12d888f-6582eea1" class="calculator-block"> 
                                         <div class="calcul-head-text">Till next Plan:<br>
                                         </div>                                         
-                                        <div class="calcul-number-text" id='cn'>5000 <span class="color-span">POL</span>
+                                        <div class="calcul-number-text" id='cn'>500 <span class="color-span">POL</span>
                                         </div>                                         
                                     </div>                                     
                                     <div id="w-node-e2a41b2b-f501-1f55-d4e2-d09953a529b1-6582eea1" class="calculator-block"> 
                                         <div class="calcul-head-text">Minimum Percent:<br>
                                         </div>                                         
-                                        <div class="calcul-number-text" id='cpr'>.20% <span class="color-span">per day</span>
+                                        <div class="calcul-number-text" id='cpr'>2% <span class="color-span">per day</span>
                                         </div>                                         
                                     </div>                                     
                                 </div>                                 
@@ -201,40 +201,40 @@ $("#cs").html(Number(val).toFixed(2) + " <span class='color-span'>POL</span>");
 if (!$('#name').val()) {
 $("#cs").html("0.1 <span class='color-span'>POL</span>");
 }
- var pj = .20;
+ var pj = 2;
     var vs = 1.0;
-    var oo = 0.02;
+    var oo = 0.2;
 
-    if (val >= 1 && val <= 5000) {
-        pj = .20;
+    if (val >= 1 && val <= 500) {
+        pj = 2;
+        vs = 501.0;
+        oo = 0.2;
+    } else if (val >= 501 && val <= 5000) {
+        pj = 3;
         vs = 5001.0;
-        oo = 0.02;
-    } else if (val >= 5001 && val <= 50000) {
-        pj = .30;
-        vs = 50001.0;
-        oo = 0.02;
-    } else if (val >= 50001 && val <= 100000) {
-        pj = .40;
-        oo = 0.02;
+        oo = 0.2;
+    } else if (val >= 5001 && val <= 10000) {
+        pj = 4;
+        oo = 0.2;
     } else if (val < 1) {
-        pj = .20; // or whatever you want for values less than 1
+        pj = 2; // or whatever you want for values less than 1
         vs = 1.0;
-        oo = 0.02;
+        oo = 0.2;
     } else {
-        pj = .40; // Default case if needed
-        oo = 0.02;
+        pj = 4; // Default case if needed
+        oo = 0.2;
     }
 
     var cp = val * pj / 100;
 
     var cz;
-    if (val >= 100001) {
+    if (val >= 10001) {
 }
 else
 {
 var cz = vs-val;
 }
-//You wiil get: .20% or 0.1250 <span class="color-span">MATIC</span> daily
+//You wiil get: 2% or 0.1250 <span class="color-span">MATIC</span> daily
 
 $("#cp").html(Number(cp).toFixed(3) + " <span class='color-span'>POL per day</span>");
 $("#cpr").html(pj + "% <span class='color-span'>per day</span>");
@@ -259,16 +259,16 @@ $("#cs").html("0.1 <span class='color-span'>MATIC</span>");
 }
 
 var pj = 0;
-if(val > 0.1 && val < 1)
+if(val > 1 && val < 1)
 {
-	pj = .20;
+	pj = 2;
 }
 else if(val > 1 && val < 10)
 {
-	pj = .30;
+	pj = 3;
 } else if(val > 50)
 {
-	pj = .40;
+	pj = 4;
 }
 	
 
@@ -358,9 +358,9 @@ $("#cp").html(cp + " <span class='color-span'>MATIC</span>");
                                 <img src="https://polsage.io/img/polsage.png" alt="Plan 1 Image">
                                 <div class="po-head">1 - 5000&nbsp;<span class="color-span">POL</span>
                                 </div>                                     
-                                <div class="po-percent-text">.20% per Day</div>
-                                <div class="po-percent-text">1000 Days</div>
-                                <div class="po-percent-text">Total Profit 200%</div>                                     
+                                <div class="po-percent-text">2% per Day</div>
+                                <div class="po-percent-text">75 Days</div>
+                                <div class="po-percent-text">Total Profit 150%</div>                                     
                                 <div class="mini-table-info"> 
                                     <div class="mini-card-text-wr"> 
                                         <div class="mini-card-text">Hold bonus:</div>                                             
@@ -374,11 +374,11 @@ $("#cp").html(cp + " <span class='color-span'>MATIC</span>");
 				    <center><h3 style="color: silver; text-shadow: 0 0 5px #00FFFF, 0 0 10px #00FFFF, 0 0 15px #00FFFF, 0 0 20px #00FFFF, 0 0 30px #00FFFF, 0 0 40px #00FFFF, 0 0 50px #00FFFF, 0 0 75px #00FFFF;">
                                 <div class="table-mi-head" style="color: silver;">PolSage X4&nbsp;</div></h3> <!-- Apply silver color -->
                                 <img src="https://polsage.io/img/polsage.png" alt="Plan 1 Image">
-                                <div class="po-head">5001 - 50,000&nbsp;<span class="color-span">POL</span>
+                                <div class="po-head">501 - 5,000&nbsp;<span class="color-span">POL</span>
                                 </div>                                     
-                                <div class="po-percent-text">.30% per Day</div>
-                                <div class="po-percent-text">For 1000 Days</div>
-                                <div class="po-percent-text">Total Profit 300%</div>                                     
+                                <div class="po-percent-text">3% per Day</div>
+                                <div class="po-percent-text">For 80 Days</div>
+                                <div class="po-percent-text">Total Profit 240%</div>                                     
                                 <div class="mini-table-info"> 
                                     <div class="mini-card-text-wr"> 
                                         <div class="mini-card-text">Hold bonus:</div>                                             
@@ -392,10 +392,10 @@ $("#cp").html(cp + " <span class='color-span'>MATIC</span>");
                                 <center><h2 style="color: gold; text-shadow: 0 0 5px #00FFFF, 0 0 7px #00FFFF, 0 0 9px #00FFFF, 0 0 13px #00FFFF, 0 0 21px #00FFFF, 0 0 30px #00FFFF, 0 0 35px #00FFFF, 0 0 60px #00FFFF;">
 					PolSage xGold</h2> <!-- Apply gold color -->
                                 <img src="https://polsage.io/img/polsage.png" alt="Plan 1 Image">
-                                <div class="po-head">50,001 - 100,000&nbsp;<span class="color-span">POL</span>
+                                <div class="po-head">5001 - 10,000&nbsp;<span class="color-span">POL</span>
                                 </div>                                     
-                                <div class="po-percent-text">.40% per Day</div>
-                                <div class="po-percent-text"><span style="font-size: 1em;">For 1000 Days</span><span style="font-family: monospace; font-size: 1em;">&nbsp;</span>
+                                <div class="po-percent-text">4% per Day</div>
+                                <div class="po-percent-text"><span style="font-size: 1em;">For 100 Days</span><span style="font-family: monospace; font-size: 1em;">&nbsp;</span>
                                 </div>
                                 <div class="po-percent-text">Total Profit 400%</div>                                     
                                 <div class="mini-table-info"> 
